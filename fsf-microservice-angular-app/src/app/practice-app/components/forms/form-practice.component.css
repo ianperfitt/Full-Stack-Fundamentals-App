@@ -1,0 +1,8 @@
+#input-text, 
+#select-text {
+  margin-bottom: 10px;
+}
+
+.mat-form-field {
+  display: block;
+}
