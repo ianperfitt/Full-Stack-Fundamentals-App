@@ -120,7 +120,7 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
-/.angular/cache
+fsf-microservice-angular-app/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
