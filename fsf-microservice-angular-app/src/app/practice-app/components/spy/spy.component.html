@@ -1,3 +1,5 @@
-<p *ngFor="let element of elements" appSpy>
-  {{element}}
-</p>
+<div class="spy-container">
+  <div *ngFor="let element of elements" class="spy-child" appSpy>
+    {{ element }}
+  </div>
+</div>

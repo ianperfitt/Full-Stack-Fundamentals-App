@@ -1,0 +1,8 @@
+.spy-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.spy-child {
+  margin: auto;
+}

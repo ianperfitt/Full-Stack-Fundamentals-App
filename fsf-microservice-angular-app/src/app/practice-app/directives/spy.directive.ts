@@ -1,5 +1,5 @@
 import { Directive, OnDestroy, OnInit } from "@angular/core";
-import { LoggerService } from "../practice-app/services/logger.service";
+import { LoggerService } from "../../core/logger.service";
 
 let nextId = 1;
 

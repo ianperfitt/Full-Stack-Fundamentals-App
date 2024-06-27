@@ -1,66 +1,87 @@
 <div class="button-container">
-  <mat-card class="mat-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Spy Directives</mat-card-title>
+      <mat-card-subtitle>Buttons</mat-card-subtitle>
+    </mat-card-header>
+    <app-spy-directive></app-spy-directive>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
     <mat-card-content>
-      <h3>
-        Buttons: Spy directive tracks each element created using ngFor and
-        outputs log during OnInit & OnDestroy lifecycle hooks
-      </h3>
-
-      <app-spy-directive></app-spy-directive>
+      <p>
+        Spy directive tracks each element created using ngFor and outputs log
+        during OnInit & OnDestroy lifecycle hooks.
+      </p>
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="mat-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Property Binding</mat-card-title>
+      <mat-card-subtitle>Buttons</mat-card-subtitle>
+    </mat-card-header>
+    <button mat-raised-button [disabled]="isUnchanged">Save</button>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
     <mat-card-content>
-      <h3>
-        Buttons: Disabled state of button is one-way bound to 'isUnchanged'
-        component property
-      </h3>
-
-      <!-- Bind button disabled state to `isUnchanged` property -->
-      <button type="button" [disabled]="isUnchanged">Save</button>
+      <p>
+        Disabled state of button is one-way bound to 'isUnchanged' component
+        property.
+      </p>
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="mat-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Print Hello World</mat-card-title>
+      <mat-card-subtitle>Buttons</mat-card-subtitle>
+    </mat-card-header>
+    <button mat-raised-button (click)="onClickHelloWorld()">Hello World</button>
+    <div id="hello-world">
+      {{ helloWorldString }}
+    </div>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
     <mat-card-content>
-      <h3>Buttons: Button prints 'hello world' after making API call</h3>
+      <p>Button prints 'hello world' after making API call.</p>
+    </mat-card-content>
+  </mat-card>
 
-      <div id="button-row" (click)="onClickHelloWorld()">
-        <div>
-          <button mat-raised-button>Hello World</button>
-        </div>
-
-        <div>
-          {{ helloWorldString }}
-        </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Change Text Style</mat-card-title>
+      <mat-card-subtitle>Buttons</mat-card-subtitle>
+    </mat-card-header>
+    <button
+      (click)="onClickNgClass()"
+      mat-raised-button
+      [ngClass]="isSpecial ? 'special' : ''"
+    >
+      Toggle
+    </button>
+    <mat-card-content>
+      <div class="divider">
+        <mat-divider></mat-divider>
       </div>
+      <p>Button text becomes italic when clicked using ngClass.</p>
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="mat-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Text Toggle</mat-card-title>
+      <mat-card-subtitle>Buttons</mat-card-subtitle>
+    </mat-card-header>
+    <button mat-raised-button (click)="onClickNgIf()">Toggle</button>
+    <div *ngIf="ngIfVar" id="ngif-div">ngIf evaluated to true !</div>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
     <mat-card-content>
-      <h3>Buttons: Button changes color using ngClass</h3>
-
-      <div id="button-row" (click)="onClickNgClass()">
-        <div [ngClass]="isSpecial ? 'special' : ''">
-          <button mat-raised-button>Toggle ngClass</button>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card class="mat-card">
-    <mat-card-content>
-      <h3>Buttons: Button toggles text display using ngIf</h3>
-
-      <div id="button-row" (click)="onClickNgIf()">
-        <div>
-          <button mat-raised-button>Toggle ngIfVar</button>
-        </div>
-      </div>
-
-      <div *ngIf="ngIfVar">ngIf evaluated to true !</div>
+      <p>Button toggles text display using ngIf.</p>
     </mat-card-content>
   </mat-card>
 </div>
